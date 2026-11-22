@@ -133,6 +133,12 @@
   .hero h1 .h1-sub{display:block;font-size:16px;font-weight:500;letter-spacing:.08em;margin-top:6px;opacity:.9}
   .map-btn{display:block;margin-top:24px;text-align:center;padding:16px;border:2px solid var(--ai);color:var(--ai);font-weight:700;text-decoration:none;border-radius:6px;background:#fffdf8}
   .magokoro{font-weight:800;color:var(--ai-deep)}
+  .langbar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:12px 10px 0}
+  .langbar button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid rgba(246,241,231,.5);background:transparent;color:var(--washi);cursor:pointer}
+  .langbar button.on{background:var(--washi);color:var(--ai);font-weight:700}
+  html[lang="my"] *{letter-spacing:0!important}
+  html[lang="my"] body{font-family:"Noto Sans Myanmar","Myanmar Text","Pyidaungsu",sans-serif;line-height:2.1}
+  html[lang="th"] body,html[lang="zh"] body,html[lang="en"] body{font-family:"Noto Sans Thai","Noto Sans SC","Hiragino Sans",system-ui,sans-serif}
   .float{position:fixed;right:16px;bottom:16px;z-index:9}
   @media(max-width:600px){.stamp{font-size:48px}.hero h1{font-size:18px}h2{font-size:22px}}
 </style>
@@ -140,15 +146,22 @@
 <body>
 
 <header>
+<nav class="langbar sans" aria-label="Language">
+  <button data-lang="ja" lang="ja">日本語</button>
+  <button data-lang="th" lang="th">ไทย</button>
+  <button data-lang="en" lang="en">English</button>
+  <button data-lang="zh" lang="zh">中文</button>
+  <button data-lang="my" lang="my">မြန်မာ</button>
+</nav>
   <div class="hero wrap">
    <div class="hero-inner">
     <div>
     <img class="hero-logo" src="images/logo-light.png" alt="ばんご bango ロゴ">
-    <h1><span class="h1-main">おにぎりばんご</span><span class="h1-sub"><span class="nb">バンコク・</span><span class="nb">スクンビット39の</span><span class="nb">手作り和食</span></span></h1>
-    <p class="lead"><span class="nb">握りたてのおにぎり、</span><span class="nb">日本の弁当、</span><span class="nb">オリジナル煮込みハンバーグ。</span><br><span class="nb">バンコクの毎日に、</span><span class="nb">手作りの日本のごはんを。</span></p>
+    <h1><span class="h1-main" data-i18n="h1main">おにぎりばんご</span><span class="h1-sub" data-i18n="h1sub"><span class="nb">バンコク・</span><span class="nb">スクンビット39の</span><span class="nb">手作り和食</span></span></h1>
+    <p class="lead" data-i18n="lead"><span class="nb">握りたてのおにぎり、</span><span class="nb">日本の弁当、</span><span class="nb">オリジナル煮込みハンバーグ。</span><br><span class="nb">バンコクの毎日に、</span><span class="nb">手作りの日本のごはんを。</span></p>
     <div class="cta sans">
-      <a class="btn btn-line" href="https://line.me/R/ti/p/@455srjrl">LINEで注文する</a>
-      <a class="btn btn-ghost" href="#info">お店の場所・営業時間</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@455srjrl" data-i18n="cta_line">LINEで注文する</a>
+      <a class="btn btn-ghost" href="#info" data-i18n="cta_info">お店の場所・営業時間</a>
     </div>
     </div>
    </div>
@@ -158,36 +171,36 @@
 <main>
   <section class="omoi">
     <div class="wrap">
-      <h2>ばんごの想い</h2>
+      <h2 data-i18n="h_omoi">ばんごの想い</h2>
       <div class="with-bm"><div>
-      <p>特別な日のごちそうより、何気ない毎日のごはんを大事にしたい。</p>
-      <p>ばんごは、<strong class="magokoro">真心</strong>を込めて手作りした日本のごはんを、バンコクで暮らす人、働く人、旅する人の日常に届ける店です。</p>
-      <p>おにぎりは注文を受けてから握る、握りたてが基本です。</p>
+      <p data-i18n="omoi1">特別な日のごちそうより、何気ない毎日のごはんを大事にしたい。</p>
+      <p data-i18n="omoi2">ばんごは、<strong class="magokoro">真心</strong>を込めて手作りした日本のごはんを、バンコクで暮らす人、働く人、旅する人の日常に届ける店です。</p>
+      <p data-i18n="omoi3">おにぎりは注文を受けてから握る、握りたてが基本です。</p>
       </div><img class="bm" src="images/bangoman-wave.jpg" alt="手をふるBANGOMAN" loading="lazy"></div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>ばんごのブランド<img class="bm" src="images/bangoman-thumbsup.jpg" alt="" loading="lazy"></h2>
+      <h2><span data-i18n="h_brand">ばんごのブランド</span><img class="bm" src="images/bangoman-thumbsup.jpg" alt="" loading="lazy"></h2>
       <div class="brands">
         <div class="card">
           <img class="menu-photo" src="images/onigiri.jpg" alt="おにぎりばんごの鮭おにぎり" loading="lazy" onerror="this.remove()">
           <span class="sub sans">ONIGIRI BANGO</span>
-          <h3>おにぎりばんご</h3>
-          <p>定番の鮭から、ここでしか食べられない具まで。注文を受けてから握る、握りたてのおにぎり。</p>
+          <h3 data-i18n="b1name">おにぎりばんご</h3>
+          <p data-i18n="b1desc">定番の鮭から、ここでしか食べられない具まで。注文を受けてから握る、握りたてのおにぎり。</p>
         </div>
         <div class="card">
           <img class="menu-photo" src="images/bento.jpg" alt="べんとうばんごの焼肉弁当" loading="lazy" onerror="this.remove()">
           <span class="sub sans">BENTO BANGO</span>
-          <h3>べんとうばんご</h3>
-          <p>チキン南蛮、焼肉、とんかつ、鮭の塩焼き。日本の味そのままの手作り弁当。</p>
+          <h3 data-i18n="b2name">べんとうばんご</h3>
+          <p data-i18n="b2desc">チキン南蛮、焼肉、とんかつ、鮭の塩焼き。日本の味そのままの手作り弁当。</p>
         </div>
         <div class="card dragon">
           <img class="menu-photo" src="images/dragonburg.jpg" alt="ドラゴンバーグ39の煮込みハンバーグ" loading="lazy" onerror="this.remove()">
           <span class="sub sans">DRAGONBURG 39</span>
-          <h3>ドラゴンバーグ39</h3>
-          <p>オリジナルデミグラスでじっくり煮込んだ、ここにしかない煮込みハンバーグ。</p>
+          <h3 data-i18n="b3name">ドラゴンバーグ39</h3>
+          <p data-i18n="b3desc">オリジナルデミグラスでじっくり煮込んだ、ここにしかない煮込みハンバーグ。</p>
         </div>
       </div>
     </div>
@@ -195,49 +208,32 @@
 
   <section>
     <div class="wrap">
-      <h2>ご注文方法<img class="bm" src="images/bangoman-shopping.jpg" alt="" loading="lazy"></h2>
+      <h2><span data-i18n="h_order">ご注文方法</span><img class="bm" src="images/bangoman-shopping.jpg" alt="" loading="lazy"></h2>
       <div class="order sans">
-        <div><b>LINE注文</b><span>いちばんおトク。LINE公式アカウント「ばんご」からメニューを見て注文、QRでお支払い。</span></div>
-        <div><b>Grab</b><span>Grabで「Onigiri Bango」と検索してください。</span></div>
-        <div><b>LINE MAN</b><span>LINE MANからもご注文いただけます。</span></div>
-        <div><b>テイクアウト</b><span>お店で直接受け取りもOKです。</span></div>
+        <div><b data-i18n="o1t">LINE注文</b><span data-i18n="o1d">いちばんおトク。LINE公式アカウント「ばんご」からメニューを見て注文、QRでお支払い。</span></div>
+        <div><b>Grab</b><span data-i18n="o2d">Grabで「Onigiri Bango」と検索してください。</span></div>
+        <div><b>LINE MAN</b><span data-i18n="o3d">LINE MANからもご注文いただけます。</span></div>
+        <div><b data-i18n="o4t">テイクアウト</b><span data-i18n="o4d">お店で直接受け取りもOKです。</span></div>
       </div>
     </div>
   </section>
 
   <section id="info">
     <div class="wrap">
-      <h2>店舗情報<img class="bm" src="images/bangoman-squat.jpg" alt="" loading="lazy"></h2>
+      <h2><span data-i18n="h_info">店舗情報</span><img class="bm" src="images/bangoman-squat.jpg" alt="" loading="lazy"></h2>
       <table class="info sans">
-        <tr><th>店名</th><td>おにぎりばんご（ONIGIRI BANGO）<br>べんとうばんご／ドラゴンバーグ39</td></tr>
-        <tr><th>住所</th><td>181/1 Soi Sukhumvit 39, Khlong Tan Nuea, Watthana, Bangkok 10110</td></tr>
-        <tr><th>行き方</th><td>Soi 39のフジスーパー2号店のところのS字カーブから、スパライプレイスのあるソイに入って10m、右側の1階。<br>※Soi 39はスクンビット通り側から車で入れません（逆一通）。</td></tr>
-        <tr><th>営業時間</th><td>10:00〜23:00</td></tr>
-        <tr><th>定休日</th><td>毎週水曜日</td></tr>
-        <tr><th>電話</th><td><a href="tel:+66843343939">084-334-3939</a></td></tr>
+        <tr><th data-i18n="th_name">店名</th><td data-i18n="td_name">おにぎりばんご（ONIGIRI BANGO）<br>べんとうばんご／ドラゴンバーグ39</td></tr>
+        <tr><th data-i18n="th_addr">住所</th><td>181/1 Soi Sukhumvit 39, Khlong Tan Nuea, Watthana, Bangkok 10110</td></tr>
+        <tr><th data-i18n="th_dir">行き方</th><td data-i18n="td_dir">Soi 39のフジスーパー2号店のところのS字カーブから、スパライプレイスのあるソイに入って10m、右側の1階。<br>※Soi 39はスクンビット通り側から車で入れません（逆一通）。</td></tr>
+        <tr><th data-i18n="th_hours">営業時間</th><td data-i18n="td_hours">10:00〜23:00</td></tr>
+        <tr><th data-i18n="th_closed">定休日</th><td data-i18n="td_closed">毎週水曜日</td></tr>
+        <tr><th data-i18n="th_tel">電話</th><td><a href="tel:+66843343939">084-334-3939</a></td></tr>
         <tr><th>LINE</th><td><a href="https://line.me/R/ti/p/@455srjrl">@455srjrl</a></td></tr>
       </table>
-      <a class="map-btn sans" href="https://share.google/qNCozfXf45I44edYS" target="_blank" rel="noopener">📍 Googleマップで場所を見る</a>
+      <a class="map-btn sans" href="https://share.google/qNCozfXf45I44edYS" target="_blank" rel="noopener" data-i18n="map">📍 Googleマップで場所を見る</a>
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <h2>English / ภาษาไทย<img class="bm" src="images/bangoman-wai.jpg" alt="" loading="lazy"></h2>
-      <div class="multi sans">
-        <div lang="en">
-          <h3>ONIGIRI BANGO</h3>
-          Freshly made Japanese rice balls (onigiri), bento and our original stewed hamburg steak "DragonBurg 39" — handmade in Sukhumvit Soi 39, Bangkok. Order via LINE, Grab or LINE MAN. Takeaway available.<br>
-          Open 10:00–23:00, closed on Wednesdays.
-        </div>
-        <div lang="th">
-          <h3>โอนิกิริ บังโกะ</h3>
-          ข้าวปั้นญี่ปุ่นปั้นสด เบนโตะ และแฮมเบิร์กสเต๊กตุ๋นสูตรพิเศษ "DragonBurg 39" ทำมือที่ซอยสุขุมวิท 39 สั่งได้ทาง LINE, Grab และ LINE MAN รับเองที่ร้านได้<br>
-          เปิด 10:00–23:00 น. หยุดทุกวันพุธ
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="sans">
@@ -249,6 +245,24 @@
   © ONIGIRI BANGO Co.,Ltd.
 </footer>
 
-<a class="btn btn-line float sans" href="https://line.me/R/ti/p/@455srjrl">LINEで注文</a>
+<a class="btn btn-line float sans" href="https://line.me/R/ti/p/@455srjrl" data-i18n="float">LINEで注文</a>
+<script>
+(function(){
+  var T={"th": {"h1main": "โอนิกิริ บังโกะ", "h1sub": "<span class=\"nb\">อาหารญี่ปุ่นทำมือ</span> <span class=\"nb\">ซอยสุขุมวิท 39 กรุงเทพฯ</span>", "lead": "<span class=\"nb\">ข้าวปั้นปั้นสด</span> <span class=\"nb\">เบนโตะญี่ปุ่น</span> <span class=\"nb\">และแฮมเบิร์กสเต๊กตุ๋นสูตรต้นตำรับ</span><br><span class=\"nb\">ส่งข้าวญี่ปุ่นทำมือ</span><span class=\"nb\">ถึงทุกวันของคุณในกรุงเทพฯ</span>", "cta_line": "สั่งผ่าน LINE", "cta_info": "ที่ตั้งร้าน・เวลาเปิด", "h_omoi": "ความตั้งใจของบังโกะ", "omoi1": "มากกว่าอาหารมื้อพิเศษ เราอยากให้ความสำคัญกับข้าวมื้อธรรมดาในทุกวัน", "omoi2": "บังโกะคือร้านที่ส่งข้าวญี่ปุ่นซึ่งทำด้วย<strong class=\"magokoro\">ใจ</strong> ถึงชีวิตประจำวันของทุกคนที่อาศัย ทำงาน และเดินทางในกรุงเทพฯ", "omoi3": "ข้าวปั้นของเราปั้นหลังได้รับออเดอร์เท่านั้น ปั้นสดใหม่ทุกครั้ง", "h_brand": "แบรนด์ของบังโกะ", "b1name": "โอนิกิริ บังโกะ", "b1desc": "ตั้งแต่ไส้แซลมอนยอดนิยม ไปจนถึงไส้ที่หากินได้ที่นี่ที่เดียว ข้าวปั้นที่ปั้นสดหลังได้รับออเดอร์", "b2name": "เบนโตะ บังโกะ", "b2desc": "ไก่นัมบัง ยากินิกุ ทงคัตสึ แซลมอนย่างเกลือ เบนโตะทำมือรสชาติญี่ปุ่นแท้", "b3name": "DragonBurg 39", "b3desc": "แฮมเบิร์กสเต๊กตุ๋นช้าๆ ในซอสเดมิกลาสสูตรต้นตำรับ มีที่นี่ที่เดียว", "h_order": "วิธีสั่งซื้อ", "o1t": "สั่งผ่าน LINE", "o1d": "คุ้มที่สุด ดูเมนูและสั่งผ่าน LINE Official Account 「ばんご」 ชำระเงินด้วย QR", "o2d": "ค้นหา 「Onigiri Bango」 ใน Grab", "o3d": "สั่งผ่าน LINE MAN ได้เช่นกัน", "o4t": "รับเองที่ร้าน", "o4d": "มารับที่ร้านได้เลย", "h_info": "ข้อมูลร้าน", "th_name": "ชื่อร้าน", "td_name": "โอนิกิริ บังโกะ (ONIGIRI BANGO)<br>เบนโตะ บังโกะ／DragonBurg 39", "th_addr": "ที่อยู่", "th_dir": "การเดินทาง", "td_dir": "จากโค้งรูปตัว S ตรงฟูจิซูเปอร์ สาขา 2 ในซอยสุขุมวิท 39 เลี้ยวเข้าซอยที่มีศุภาลัย เพลส ประมาณ 10 เมตร ร้านอยู่ชั้น 1 ด้านขวามือ<br>※รถยนต์เข้าซอย 39 จากฝั่งถนนสุขุมวิทไม่ได้ (เดินรถทางเดียว)", "th_hours": "เวลาเปิด", "td_hours": "10:00–23:00 น.", "th_closed": "วันหยุด", "td_closed": "ทุกวันพุธ", "th_tel": "โทร", "map": "📍 ดูแผนที่ใน Google Maps", "float": "สั่งผ่าน LINE"}, "en": {"h1main": "Onigiri Bango", "h1sub": "<span class=\"nb\">Handmade Japanese food</span> <span class=\"nb\">in Sukhumvit Soi 39, Bangkok</span>", "lead": "<span class=\"nb\">Freshly made onigiri,</span> <span class=\"nb\">Japanese bento</span> <span class=\"nb\">and our original stewed hamburg steak.</span><br><span class=\"nb\">Handmade Japanese meals</span> <span class=\"nb\">for your everyday life in Bangkok.</span>", "cta_line": "Order on LINE", "cta_info": "Location & Hours", "h_omoi": "Our Philosophy", "omoi1": "More than a feast for special days, we care about the simple meals you eat every day.", "omoi2": "Bango delivers Japanese food handmade <strong class=\"magokoro\">from the heart</strong> to the everyday lives of people who live, work and travel in Bangkok.", "omoi3": "Our onigiri are made only after you order — always freshly made.", "h_brand": "Our Brands", "b1name": "Onigiri Bango", "b1desc": "From classic salmon to fillings you can only find here. Onigiri made fresh after you order.", "b2name": "Bento Bango", "b2desc": "Chicken nanban, yakiniku, tonkatsu, salt-grilled salmon. Handmade bento with authentic Japanese taste.", "b3name": "DragonBurg 39", "b3desc": "Hamburg steak slowly stewed in our original demi-glace sauce. Only here.", "h_order": "How to Order", "o1t": "LINE Order", "o1d": "The best deal. See the menu and order on our LINE Official Account 「ばんご」, then pay by QR.", "o2d": "Search 「Onigiri Bango」 on Grab.", "o3d": "You can also order on LINE MAN.", "o4t": "Takeaway", "o4d": "Pick up directly at the shop.", "h_info": "Shop Info", "th_name": "Name", "td_name": "Onigiri Bango (ONIGIRI BANGO)<br>Bento Bango / DragonBurg 39", "th_addr": "Address", "th_dir": "Directions", "td_dir": "From the S-curve at Fuji Supermarket Branch 2 on Soi 39, turn into the soi with Supalai Place. About 10 m in, ground floor on the right.<br>*Cars cannot enter Soi 39 from Sukhumvit Road (one-way).", "th_hours": "Hours", "td_hours": "10:00–23:00", "th_closed": "Closed", "td_closed": "Every Wednesday", "th_tel": "Phone", "map": "📍 Open in Google Maps", "float": "Order on LINE"}, "zh": {"h1main": "Onigiri Bango 饭团", "h1sub": "<span class=\"nb\">曼谷素坤逸39巷的</span><span class=\"nb\">手作日本料理</span>", "lead": "<span class=\"nb\">现捏饭团、</span><span class=\"nb\">日式便当、</span><span class=\"nb\">原创炖汉堡排。</span><br><span class=\"nb\">把手作的日本家常饭，</span><span class=\"nb\">送到你在曼谷的每一天。</span>", "cta_line": "用LINE点餐", "cta_info": "店铺位置・营业时间", "h_omoi": "Bango的心意", "omoi1": "比起特别日子的大餐，我们更珍惜平凡日子里的每一餐。", "omoi2": "Bango用<strong class=\"magokoro\">真心</strong>亲手制作日本料理，送到在曼谷生活、工作和旅行的每个人的日常中。", "omoi3": "饭团在接到订单后才开始捏制，坚持现捏现做。", "h_brand": "Bango的品牌", "b1name": "Onigiri Bango 饭团", "b1desc": "从经典三文鱼到只有这里才吃得到的馅料。接单后现捏的饭团。", "b2name": "Bento Bango 便当", "b2desc": "南蛮鸡、烤肉、炸猪排、盐烤三文鱼。原汁原味的手作日式便当。", "b3name": "DragonBurg 39", "b3desc": "用原创多蜜酱慢慢炖煮的汉堡排，只有这里才有。", "h_order": "点餐方式", "o1t": "LINE点餐", "o1d": "最划算。在LINE官方账号「ばんご」查看菜单并下单，用QR付款。", "o2d": "在Grab搜索「Onigiri Bango」。", "o3d": "也可以通过LINE MAN点餐。", "o4t": "到店自取", "o4d": "欢迎直接到店取餐。", "h_info": "店铺信息", "th_name": "店名", "td_name": "Onigiri Bango 饭团（ONIGIRI BANGO）<br>Bento Bango 便当／DragonBurg 39", "th_addr": "地址", "th_dir": "交通", "td_dir": "从素坤逸39巷 Fuji超市2号店旁的S形弯道，转入有Supalai Place公寓的小巷，约10米，右侧一楼。<br>※汽车无法从素坤逸大道一侧驶入39巷（单行道）。", "th_hours": "营业时间", "td_hours": "10:00–23:00", "th_closed": "公休日", "td_closed": "每周三", "th_tel": "电话", "map": "📍 在Google地图查看", "float": "LINE点餐"}, "my": {"h1main": "Onigiri Bango", "h1sub": "<span class=\"nb\">ဘန်ကောက်၊ ဆူခွန်ဗစ် ၃၉ ရှိ</span> <span class=\"nb\">လက်ဖြင့်ပြုလုပ်သော ဂျပန်အစားအစာ</span>", "lead": "<span class=\"nb\">အသစ်လုံးထားသော ဆန်လုံး (onigiri)၊</span> <span class=\"nb\">ဂျပန်ထမင်းဘူး၊</span> <span class=\"nb\">မူရင်းချက်နည်း ဟမ်ဘာဂါအသားပြားပြုတ်။</span><br><span class=\"nb\">လက်ဖြင့်ပြုလုပ်သော ဂျပန်ထမင်းကို</span> <span class=\"nb\">ဘန်ကောက်ရှိ သင့်နေ့စဉ်ဘဝသို့ ပို့ဆောင်ပေးပါသည်။</span>", "cta_line": "LINE ဖြင့် မှာယူရန်", "cta_info": "ဆိုင်တည်နေရာ・ဖွင့်ချိန်", "h_omoi": "ဘန်ဂို၏ စိတ်ဆန္ဒ", "omoi1": "အထူးနေ့များ၏ ဟင်းလျာများထက် သာမန်နေ့စဉ် ထမင်းကို ပိုတန်ဖိုးထားလိုပါသည်။", "omoi2": "ဘန်ဂိုသည် <strong class=\"magokoro\">စေတနာ</strong>အပြည့်ဖြင့် လက်ဖြင့်ပြုလုပ်ထားသော ဂျပန်ထမင်းကို ဘန်ကောက်တွင် နေထိုင်သူ၊ အလုပ်လုပ်သူ၊ ခရီးသွားသူတို့၏ နေ့စဉ်ဘဝသို့ ပို့ဆောင်ပေးသော ဆိုင်ဖြစ်ပါသည်။", "omoi3": "ဆန်လုံးကို အော်ဒါရမှသာ လုံးပေးပါသည်။ အမြဲ အသစ်လုံးပေးပါသည်။", "h_brand": "ဘန်ဂို၏ အမှတ်တံဆိပ်များ", "b1name": "Onigiri Bango", "b1desc": "ရိုးရိုး ဆယ်လမွန်ငါးမှစ၍ ဤနေရာတွင်သာ စားနိုင်သော အစာသွတ်များအထိ။ အော်ဒါရမှ လုံးပေးသော ဆန်လုံး။", "b2name": "Bento Bango", "b2desc": "ချီကင်နန်ဘန်၊ ယာကီနီကု၊ တွန်ကက်ဆု၊ ဆားနယ်ကင် ဆယ်လမွန်။ ဂျပန်အရသာအတိုင်း လက်ဖြင့်ပြုလုပ်သော ထမင်းဘူး။", "b3name": "DragonBurg 39", "b3desc": "မူရင်း ဒမီဂလာ့စ်ဆော့စ်ဖြင့် ဖြည်းဖြည်းချင်း ပြုတ်ထားသော ဟမ်ဘာဂါအသားပြား။ ဤနေရာတွင်သာ ရှိပါသည်။", "h_order": "မှာယူနည်း", "o1t": "LINE ဖြင့် မှာယူခြင်း", "o1d": "အတန်ဆုံးဖြစ်ပါသည်။ LINE တရားဝင်အကောင့် 「ばんご」 တွင် မီနူးကြည့်ပြီး မှာယူကာ QR ဖြင့် ငွေပေးချေပါ။", "o2d": "Grab တွင် 「Onigiri Bango」 ဟု ရှာပါ။", "o3d": "LINE MAN မှလည်း မှာယူနိုင်ပါသည်။", "o4t": "ဆိုင်တွင် လာယူခြင်း", "o4d": "ဆိုင်သို့ တိုက်ရိုက်လာယူနိုင်ပါသည်။", "h_info": "ဆိုင်အချက်အလက်", "th_name": "ဆိုင်အမည်", "td_name": "Onigiri Bango (ONIGIRI BANGO)<br>Bento Bango / DragonBurg 39", "th_addr": "လိပ်စာ", "th_dir": "သွားရောက်နည်း", "td_dir": "Soi 39 ရှိ Fuji Supermarket ဆိုင်ခွဲ ၂ အနီးရှိ S ပုံကွေ့မှ Supalai Place ရှိသော လမ်းကြားထဲသို့ ၁၀ မီတာခန့် ဝင်ပါ။ ညာဘက် မြေညီထပ်တွင် ရှိပါသည်။<br>※ Soi 39 ထဲသို့ ဆူခွန်ဗစ်လမ်းမဘက်မှ ကားဖြင့် ဝင်၍ မရပါ (တစ်လမ်းသွား)။", "th_hours": "ဖွင့်ချိန်", "td_hours": "10:00–23:00", "th_closed": "ပိတ်ရက်", "td_closed": "ဗုဒ္ဓဟူးနေ့တိုင်း", "th_tel": "ဖုန်း", "map": "📍 Google Maps တွင် ကြည့်ရန်", "float": "LINE ဖြင့် မှာယူရန်"}};
+  var els=document.querySelectorAll('[data-i18n]'), ja={};
+  els.forEach(function(e){ja[e.dataset.i18n]=e.innerHTML;});
+  function set(l){
+    var d=l==='ja'?ja:T[l]; if(!d)return;
+    els.forEach(function(e){var v=d[e.dataset.i18n]; if(v!=null)e.innerHTML=v;});
+    document.documentElement.lang=l;
+    document.querySelectorAll('.langbar button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
+    try{localStorage.setItem('bango-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('.langbar button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang);});});
+  var l=null; try{l=localStorage.getItem('bango-lang');}catch(e){}
+  if(!l){var n=(navigator.language||'').slice(0,2); if(n==='th'||n==='zh'||n==='my')l=n;}
+  set(l||'ja');
+})();
+</script>
 </body>
 </html>
