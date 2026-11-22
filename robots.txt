@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://taku-boat.github.io/bango-lp/sitemap.xml
